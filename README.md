@@ -7,5 +7,7 @@ This project aims to provide a basic funtionality of the Ghidra Decompiler usig 
 2. When you are going to execute the command ```cmake --install build --prefix ./install``` specify the prefix to point to ./vendor folder
 inside the rust-sleigh (you can also just copy the ./install content later...)
 3. now that you have the sleigh installed you should be able to run ```cargo build```
-
+   
+*NOTE*: This process will be automated at some point, idially inside the build.rs (?)
 ## TODO
+- [ ] PCode Printer
