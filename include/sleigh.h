@@ -1,5 +1,4 @@
 #include <sleigh/libsleigh.hh>
-
 typedef struct InternalSleighInstruction {
     uint8_t opcode;
     std::string mnemonic;
@@ -28,7 +27,6 @@ class AssemblyPrinter : public ghidra::AssemblyEmit {
         void dump(const ghidra::Address &addr, 
                     const std::string &mnemonic,
                     const std::string &body) override {
-                        printf("AssemblyPrinter> %p %s %s\n", addr.getOffset(), mnemonic.c_str(), body.c_str());
                         this->mnemonic = new std::string(mnemonic);
                         this->body =new std::string(body);
         }

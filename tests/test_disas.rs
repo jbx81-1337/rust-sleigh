@@ -28,11 +28,5 @@ fn test_disas() {
     let tricore_code = b"\x0b\x45\x10\x88\x02\x6a\xda\x08\x6d\xff\xee\xff\x42\x2f\xe2\xaf\x42\x98\x42\xf8\x60\x82\x3c\x01".to_vec();
     let size: u32 = tricore_code.len().try_into().unwrap();
     let disassembly = dec.disas(tricore_code, 0x8000040a, size);
-    
-    for item in disassembly {
-        let a = item.opcode;
-        let b = item.mnemonic;
-        let c = item.body;
-    }
-    return assert_eq!(0, 0)
+    return assert_eq!(disassembly.len(), 10)
 }

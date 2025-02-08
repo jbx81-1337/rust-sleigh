@@ -21,7 +21,7 @@ EXPORT rust::Vec<struct SleighInstruction> disas(std::shared_ptr<SleighDecompile
     tmp.opcode = ins->opcode;
     tmp.mnemonic = rust::String(ins->mnemonic);
     tmp.body = rust::String(ins->body);
-
+    
     output.push_back(tmp);
   }
   return output;
