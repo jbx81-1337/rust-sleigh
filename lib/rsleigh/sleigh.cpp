@@ -14,9 +14,10 @@ SleighDecompiler::SleighDecompiler(std::string sleigh_path, std::string sla_file
   this->ctx = new ghidra::ContextInternal();
   this->engine = new ghidra::Sleigh(this->img, this->ctx);
   this->storage = new ghidra::DocumentStorage();
+  std::istringstream sla("<sleigh>" + sla_file_path + "</sleigh>");
   this->slaRoot = 
-        this->storage->openDocument(
-            sla_file_path
+        this->storage->parseDocument(
+            sla
           )->getRoot();
 
   this->storage->registerTag(this->slaRoot);

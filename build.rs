@@ -13,6 +13,7 @@ fn main() {
         .include(sleigh_include)
         .include(rsleigh_include)
         .include(sleigh_include)
+        .flag("-lz")
         .flag("-lsla")
         .flag("-ldecomp")
         .flag("-lslaSupport")
@@ -23,6 +24,7 @@ fn main() {
     println!("cargo:rustc-link-lib=static=sla");
     println!("cargo:rustc-link-lib=static=slaSupport");
 
+    println!("cargo:rustc-link-lib=z");
     println!("cargo:rerun-if-changed=src/lib.rs");
     println!("cargo:rerun-if-changed=src/instruction.rs");
     println!("cargo:rerun-if-changed=lib/rsleigh/rsleigh.cpp");
