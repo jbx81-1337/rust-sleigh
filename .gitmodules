@@ -1,0 +1,3 @@
+[submodule "deps/sleigh"]
+	path = deps/sleigh
+	url = https://github.com/jbx81-1337/sleigh

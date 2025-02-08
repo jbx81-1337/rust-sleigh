@@ -1,5 +1,10 @@
 use std::path::Path;
+use std::process::Command;
+
 fn main() {
+    let mut build_sleigh = Command::new("bash");
+    build_sleigh.arg("./build_sleigh.sh");
+    let _ = build_sleigh.output();
     let sleigh_include = Path::new("vendor/include/sleigh");
     let rsleigh_include = Path::new("include");
     cxx_build::bridge("src/lib.rs")
