@@ -56,7 +56,6 @@ std::vector<InternalSleighInstruction> *GetInstructions(ghidra::Sleigh &engine, 
   ghidra::Address cur_addr = ghidra::Address(engine.getDefaultCodeSpace(), addr);
   ghidra::Address last_addr(engine.getDefaultCodeSpace(), addr + len);
   AssemblyPrinter asm_emit;
-  printf("%p %d\n", addr, len);
   while (cur_addr < last_addr) {
     InternalSleighInstruction ins;
     int32_t instr_len = engine.printAssembly(asm_emit, cur_addr);
